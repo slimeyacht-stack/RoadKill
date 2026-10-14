@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ROADKILL — Damaged on purpose.</title>
+<meta name="description" content="ROADKILL is an independent streetwear brand from northeastern PA. Damaged on purpose. Long-ear bunny beanies, chewed off like they survived something.">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="ROADKILL — Damaged on purpose.">
+<meta property="og:description" content="Independent streetwear. Damaged on purpose. Long-ear bunny beanies, chewed off like they survived the winter.">
+<meta property="og:image" content="assets/og-banner.jpg">
+<meta property="og:url" content="https://www.roadkillbrand.com/">
+<meta property="og:site_name" content="ROADKILL">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ROADKILL — Damaged on purpose.">
+<meta name="twitter:description" content="Independent streetwear. Damaged on purpose.">
+<meta name="twitter:image" content="assets/og-banner.jpg">
+
+<!-- Favicon (paint-splatter style placeholder) -->
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230d0d0d'/><text y='24' font-size='20' font-weight='700' fill='%23f2c200'>!</text></svg>">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600&family=JetBrains+Mono&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ======= MASTHEAD ======= -->
+<header class="masthead">
+  <div class="container masthead__inner">
+    <a href="/" class="logo" aria-label="ROADKILL home">
+      <span class="logo__word">ROADKILL</span>
+      <span class="logo__variant">ROADK!LL</span>
+    </a>
+    <nav class="nav" id="nav">
+      <a href="#home" class="nav__link">Home</a>
+      <a href="#shop" class="nav__link">Shop</a>
+      <a href="#about" class="nav__link">About</a>
+      <a href="#faq" class="nav__link">FAQ</a>
+      <a href="cart.html" class="nav__cart" aria-label="Open cart">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f2c200" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+        <span class="nav__cart-count" id="navCartCount">0</span>
+      </a>
+    </nav>
+    <button class="nav__toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ======= PAGE WRAPPER ======= -->
+<div class="page" id="page">
+
+  <!-- ==================== HOME ==================== -->
+  <section class="page-section hero" id="home">
+    <div class="hero__bg">
+      <img src="assets/hero-bunny-beanie.png" alt="Flagship long-ear bunny beanie, one ear chewed off like a dog got to it">
+      <div class="hero__grain"></div>
+    </div>
+    <div class="hero__content">
+      <p class="eyebrow">First Drop &middot; Thanksgiving 2026</p>
+      <h1 class="hero__title">ROADKILL</h1>
+      <h1 class="hero__title hero__title--alt">ROADK!LL</h1>
+      <p class="hero__sub">Damaged on purpose.</p>
+      <div class="hero__actions">
+        <a href="#shop" class="btn btn--primary">Join the Drop</a>
+        <a href="#the-damage" class="btn btn--ghost">The Damage</a>
+      </div>
+      <div class="hero__countdown" id="countdown" aria-live="polite"></div>
+    </div>
+    <div class="hero__side">
+      <div class="hero__scarab">
+        <!-- torn/bite-marked frame -->
+        <div class="frame frame--bite">
+          <img src="assets/hero-bunny-beanie.png" alt="Flagship long-ear bunny beanie, one ear chewed off">
+          <div class="frame__bite"></div>
+        </div>
+        <p class="caption">One ear chewed off.<br>Like a dog got to it.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== THE DAMAGE ==================== -->
+  <section class="page-section the-damage" id="the-damage">
+    <div class="container">
+      <h2 class="section-title">The Damage</h2>
+      <p class="section-lead">This is not a flaw. It's the design.</p>
+      <p class="section-body">Every ROADKILL piece is built to look like it survived something.</p>
+      <ul class="feature-list">
+        <li class="feature-list__item">
+          <span class="feature-list__marker">1</span>
+          <div><strong>Wear, then some.</strong></div>
+          <p>Scuffs, bites and tears are not clean-ups — they're the detail.</p>
+        </li>
+        <li class="feature-list__item">
+          <span class="feature-list__marker">2</span>
+          <div><strong>Damaged goods.</strong></div>
+          <p>Mystery cornmeal stains, mystery cargo stains, pine-sap. Real wear you want to show off.</p>
+        </li>
+        <li class="feature-list__item">
+          <span class="feature-list__marker">3</span>
+          <div><strong>Surviving the winter.</strong></div>
+          <p>Northeastern PA weather is not a suggestion. Wear it like you lived it.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ==================== FEATURED PRODUCTS ==================== -->
+  <section class="page-section featured" id="shop">
+    <div class="container">
+      <div class="section-head">
+        <h2 class="section-title">The Drop</h2>
+        <p class="section-lead">First drop &mdash; beanie-first.</p>
+      </div>
+      <div class="product-grid" id="featuredGrid"></div>
+    </div>
+  </section>
+
+  <!-- ==================== DROP LIST ==================== -->
+  <section class="page-section drop-list">
+    <div class="container">
+      <div class="drop-list__card">
+        <h2 class="drop-list__title">Get on the list before it gets hit.</h2>
+        <p class="drop-list__sub">Full early access &mdash; first pick of the drop, before the rest of the internet.</p>
+        <form class="drop-list__form" id="dropForm">
+          <div class="drop-list__fields">
+            <input class="input" type="text" name="name" placeholder="Name" required aria-label="Name">
+            <input class="input" type="email" name="email" placeholder="Email" required aria-label="Email">
+            <input class="input input--phone" type="tel" name="phone" placeholder="Phone (optional)" aria-label="Phone">
+          </div>
+          <button class="btn btn--primary btn--full" type="submit">Add me to the list</button>
+          <p class="form-feedback" id="formFeedback" role="status"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== ABOUT ==================== -->
+  <section class="page-section about" id="about">
+    <div class="container about__inner">
+      <div class="about__body">
+        <h2 class="section-title">Built for the bad winter.</h2>
+        <p class="section-lead">Northeastern Pennsylvania.</p>
+        <p class="section-body">Small town, highway energy, cold. We make gear that looks like it survived it.</p>
+        <p class="section-body">ROADKILL is a declaration: damage isn't a flaw, it's a badge. The right pair of jeans doesn't just fit — it tells a story. The right beanie doesn't just keep you warm, it says you've been through something.</p>
+        <p class="section-body">Every piece is cut and finished by hand. Every stain is real. The damage you see was deliberate, and the gear you wear is the point.</p>
+        <a href="#" class="btn btn--primary">The Damage Manifesto</a>
+      </div>
+      <div class="about__image">
+        <div class="frame frame--light">
+          <img src="assets/hero-bunny-beanie.png" alt="A worn long-ear bunny beanie, chewed edge">
+          <div class="frame__bite"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FAQ ==================== -->
+  <section class="page-section faq" id="faq">
+    <div class="container">
+      <h2 class="section-title">FAQ</h2>
+      <div class="faq__list" id="faqList">
+        <div class="faq__item">
+          <button class="faq__q" aria-expanded="false" aria-controls="faq1">
+            <span>Where is ROADKILL based?</span>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#ECE8E1" stroke-width="1.5"><polyline points="4 7 8 11 12 4"/></svg>
+          </button>
+          <div class="faq__a" id="faq1">
+            <p>We're from northeastern Pennsylvania — grit, cold, and highway energy. The "side of the road" aesthetic comes straight from the turnpikes and truck stops of PA.</p>
+          </div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__q" aria-expanded="false" aria-controls="faq2">
+            <span>What does "damaged on purpose" mean?</span>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#ECE8E1" stroke-width="1.5"><polyline points="4 7 8 11 12 4"/></svg>
+          </button>
+          <div class="faq__a" id="faq2">
+            <p>Our whole brand is "damaged goods." We intentionally leave wear, bites, tears and scuffs on every piece. It's the design, not a defect.</p>
+          </div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__q" aria-expanded="false" aria-controls="faq3">
+            <span>How do I join the drop list?</span>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#ECE8E1" stroke-width="1.5"><polyline points="4 7 8 11 12 4"/></svg>
+          </button>
+          <div class="faq__a" id="faq3">
+            <p>Grab a spot on the list on our home page or the Drop List section. We'll send early access to the first 200 before the drop goes live.</p>
+          </div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__q" aria-expanded="false" aria-controls="faq4">
+            <span>What's the shipping timeline?</span>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#ECE8E1" stroke-width="1.5"><polyline points="4 7 8 11 12 4"/></svg>
+          </button>
+          <div class="faq__a" id="faq4">
+            <p>Orders ship within 1&ndash;2 business days via USPS Priority. Expect 3&ndash;5 business days on the East Coast, 5&ndash;8 elsewhere.</p>
+          </div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__q" aria-expanded="false" aria-controls="faq5">
+            <span>What if a piece arrives damaged?</span>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#ECE8E1" stroke-width="1.5"><polyline points="4 7 8 11 12 4"/></svg>
+          </button>
+          <div class="faq__a" id="faq5">
+            <p>All intentional damage is pre-approved. If something arrives with unexpected damage, reply to your order confirmation and we'll make it right &mdash; no questions, no returns hassle.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER / EMAIL REPEAT ==================== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="/" class="logo" aria-label="ROADKILL home">
+          <span class="logo__word">ROADKILL</span>
+          <span class="logo__variant">ROADK!LL</span>
+        </a>
+        <p>Damaged on purpose.</p>
+        <p class="footer__legal">&copy; 2026 ROADKILL. All rights reserved. Made in the PA turnpike.</p>
+      </div>
+      <div class="footer__links">
+        <a href="#">About</a>
+        <a href="#shop">Shop</a>
+        <a href="#faq">FAQ</a>
+        <a href="#">Drop List</a>
+      </div>
+      <div class="footer__social">
+        <a href="#" aria-label="Instagram">Instagram</a>
+        <a href="#" aria-label="TikTok">TikTok</a>
+      </div>
+    </div>
+  </footer>
+
+</div><!-- /page -->
+
+<!-- ======= CART OVERVIEW (slide-in, mobile) ======= -->
+<div class="cart-overlay" id="cartOverlay" aria-hidden="true"></div>
+<div class="cart-drawer" id="cartDrawer" aria-hidden="true" role="dialog" aria-label="Shopping cart">
+  <div class="cart-drawer__header">
+    <h2>Your Cart</h2>
+    <button class="cart-drawer__close" id="cartClose" aria-label="Close cart">&times;</button>
+  </div>
+  <ul class="cart-drawer__list" id="cartList"></ul>
+  <div class="cart-drawer__footer">
+    <div class="cart-drawer__totals">
+      <span class="cart-drawer__subtotal">Subtotal</span>
+      <span class="cart-drawer__amount" id="cartSubtotal">$0.00</span>
+    </div>
+    <a href="checkout.html" class="btn btn--primary btn--full">Checkout</a>
+    <p class="cart-drawer__note">Stripe-ready &middot; placeholder until you plug in your key.</p>
+  </div>
+</div>
+
+<!-- ======= BURGER TOGGLE (duplicate for non-js) ======= -->
+<button class="nav__toggle" id="burgerToggle" aria-label="Open navigation" aria-expanded="false">
+  <span></span><span></span><span></span>
+</button>
+
+<script src="app.js"></script>
+</body>
+</html>
