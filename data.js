@@ -55,31 +55,6 @@ const PRODUCTS = [
     featured: true,
   },
   {
-    id: 'beanie-cream',
-    name: 'Midnight Tannery Beanie',
-    slug: 'midnight-tannery-beanie',
-    price: 38.00,
-    category: 'beanies',
-    colors: [
-      { name: 'Cream', hex: '#ece8e1', image: 'assets/product-2.png' },
-      { name: 'Charcoal', hex: '#3a3a3a', image: 'assets/product-1.png' },
-    ],
-    defaultColor: 'Cream',
-    description:
-      'A clean, classic beanie that finally got its texture. Waterlogged ski-socks, salt stains, the whole story — written in the grain of the knit. Warm enough to walk through a PA winter without asking for it.',
-    damageReport: {
-      material: 'Merino / acrylic blend',
-      fit: 'Relaxed, brim-2"',
-      whatGotChewed: 'Not chewed. Just lived in.',
-      origin: 'NEPA truck stop, 2:13 a.m.',
-      batch: 'Winter 2026',
-    },
-    inventory: 62,
-    available: true,
-    tags: ['Core', 'Wool'],
-    featured: true,
-  },
-  {
     id: 'beanie-grey',
     name: 'Faded Road Runner Beanie',
     slug: 'faded-road-runner-beanie',
