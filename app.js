@@ -203,9 +203,9 @@ function closeCart() {
 }
 
 function initCartInteractions() {
-  $('#cartOpen').addEventListener('click', openCart);
-  $('#cartClose').addEventListener('click', closeCart);
-  $('#cartOverlay').addEventListener('click', closeCart);
+  $('#cartOpen')?.addEventListener('click', openCart);
+  $('#cartClose')?.addEventListener('click', closeCart);
+  $('#cartOverlay')?.addEventListener('click', closeCart);
 }
 
 /* ---------- Toast ---------- */
@@ -330,7 +330,7 @@ function initNav() {
     nav.setAttribute('aria-expanded', String(!open));
   });
 
-  burger.addEventListener('click', () => {
+  burger?.addEventListener('click', () => {
     const open = burger.getAttribute('aria-expanded') === 'true';
     burger.setAttribute('aria-expanded', String(!open));
   });
@@ -338,7 +338,7 @@ function initNav() {
   document.querySelectorAll('.nav__link, .nav__cart').forEach((a) => {
     a.addEventListener('click', () => {
       nav.setAttribute('aria-expanded', 'false');
-      burger.setAttribute('aria-expanded', 'false');
+      burger?.setAttribute('aria-expanded', 'false');
     });
   });
 }
@@ -461,3 +461,111 @@ document.addEventListener('click', (e) => {
   if (!color) return;
   addToCart(pid, color);
 });
+
+/* ---------- Endcap: text reveals + LERP cursor ---------- */
+(() => {
+  const endcap = document.getElementById('endcap');
+  if (!endcap) return;
+
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (!reduceMotion) {
+    // Split headline into words (keeping <br>)
+    const title = endcap.querySelector('.endcap__title');
+    if (title) {
+      let i = 0;
+      title.innerHTML = title.innerHTML
+        .split(/<br\s*\/?>/i)
+        .map(line => line.trim().split(/\s+/).filter(Boolean)
+          .map(w => `<span class="word-wrapper"><span class="word-inner" style="--i:${i++}">${w}</span></span>`)
+          .join(' '))
+        .join('<br>');
+    }
+
+    // Split wordmark into letters
+    const mark = endcap.querySelector('.endcap__wordmark');
+    if (mark) {
+      mark.innerHTML = [...mark.textContent.trim()]
+        .map((ch, i) => `<span class="letter-wrapper"><span class="letter-inner" style="--i:${i}">${ch}</span></span>`)
+        .join('');
+    }
+
+    const io = new IntersectionObserver((entries) => {
+      if (entries.some(e => e.isIntersecting)) {
+        endcap.classList.add('is-in');
+        io.disconnect();
+      }
+    }, { threshold: .35 });
+    io.observe(endcap);
+  } else {
+    endcap.classList.add('is-in');
+  }
+
+  // Cursor: ring follows exactly, glass pill trails with LERP
+  const ring = document.getElementById('endcapRing');
+  const pill = document.getElementById('endcapPill');
+  if (!ring || !pill || reduceMotion) return;
+  if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+
+  endcap.classList.add('has-cursor');
+
+  let mx = 0, my = 0, px = 0, py = 0;
+  let scale = 0, targetScale = 0, ringScale = 0;
+  let inside = false, onLink = false, raf = 0;
+
+  const tick = () => {
+    px += (mx - px) * .08;
+    py += (my - py) * .08;
+    scale += (targetScale - scale) * .15;
+    const ringTarget = inside ? (onLink ? 1.6 : 1) : 0;
+    ringScale += (ringTarget - ringScale) * .15;
+
+    pill.style.transform = `translate3d(${px}px, ${py}px, 0) translate(-50%, -50%) scale(${scale})`;
+    ring.style.transform = `translate3d(${mx}px, ${my}px, 0) translate(-50%, -50%) scale(${ringScale})`;
+
+    const settled = Math.abs(targetScale - scale) < .001 && Math.abs(ringTarget - ringScale) < .001
+      && Math.abs(mx - px) < .1 && Math.abs(my - py) < .1;
+    if (inside || !settled) {
+      raf = requestAnimationFrame(tick);
+    } else {
+      raf = 0;
+      ring.classList.remove('is-active');
+      pill.classList.remove('is-active');
+    }
+  };
+  const start = () => { if (!raf) raf = requestAnimationFrame(tick); };
+
+  endcap.addEventListener('mouseenter', (e) => {
+    mx = e.clientX; my = e.clientY;
+    if (!raf) { px = mx; py = my; }
+    inside = true;
+    targetScale = onLink ? 0 : 1;
+    ring.classList.add('is-active');
+    pill.classList.add('is-active');
+    start();
+  });
+  endcap.addEventListener('mousemove', (e) => {
+    mx = e.clientX; my = e.clientY;
+    start();
+  });
+  endcap.addEventListener('mouseleave', () => {
+    inside = false;
+    onLink = false;
+    targetScale = 0;
+    ring.classList.remove('expanded');
+    start();
+  });
+
+  endcap.querySelectorAll('a').forEach((a) => {
+    a.addEventListener('mouseenter', () => {
+      onLink = true;
+      targetScale = 0;
+      ring.classList.add('expanded');
+    });
+    a.addEventListener('mouseleave', () => {
+      onLink = false;
+      if (inside) targetScale = 1;
+      ring.classList.remove('expanded');
+    });
+  });
+})();

@@ -126,3 +126,8 @@ const LIVE = {
   color: 'Asphalt Black',
   image: 'assets/product-1.png',
 };
+
+/* ===== Expose to app.js (top-level const does not create window properties) ===== */
+window.PRODUCTS = PRODUCTS;
+window.STOCK = STOCK;
+window.LIVE = LIVE;
