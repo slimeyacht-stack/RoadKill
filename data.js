@@ -31,6 +31,30 @@ const PRODUCTS = [
     featured: true,
   },
   {
+    id: 'cat-frayed',
+    name: 'Frayed Cat Ear Beanie',
+    slug: 'frayed-cat-ear-beanie',
+    price: 44.00,
+    category: 'beanies',
+    colors: [
+      { name: 'Asphalt Black', hex: '#0d0d0d', image: 'assets/cat-ear-beanie.webp' },
+    ],
+    defaultColor: 'Asphalt Black',
+    description:
+      'Two pointed ears, one of them torn open at the tip with the threads left hanging. Same thick rib knit and cuffed brim as the flagship, with the star patch stitched low on the cuff.',
+    damageReport: {
+      material: 'Double-knit acrylic / wool blend',
+      fit: 'Snug, cuffed brim',
+      whatGotChewed: 'Right ear, torn at the tip. Loose threads left in.',
+      origin: 'Northeastern PA, Route 11',
+      batch: 'Rarities Batch #002',
+    },
+    inventory: 30,
+    available: true,
+    tags: ['New', 'Beanies'],
+    featured: true,
+  },
+  {
     id: 'beanie-cream',
     name: 'Midnight Tannery Beanie',
     slug: 'midnight-tannery-beanie',
