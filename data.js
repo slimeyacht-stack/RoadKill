@@ -11,7 +11,7 @@ const PRODUCTS = [
     price: 48.00,
     category: 'beanies',
     colors: [
-      { name: 'Asphalt Black', hex: '#0d0d0d', image: 'assets/product-1.png' },
+      { name: 'Asphalt Black', hex: '#0d0d0d', image: 'assets/bunny-beanie.png' },
       { name: 'Off-White', hex: '#ece8e1', image: 'assets/product-2.png' },
       { name: 'Faded Grey', hex: '#6b6b6b', image: 'assets/product-3.png' },
     ],
@@ -124,7 +124,7 @@ const LIVE = {
   name: 'Ripped Long-Ear Bunny Beanie',
   price: 48.00,
   color: 'Asphalt Black',
-  image: 'assets/product-1.png',
+  image: 'assets/bunny-beanie.png',
 };
 
 /* ===== Expose to app.js (top-level const does not create window properties) ===== */
